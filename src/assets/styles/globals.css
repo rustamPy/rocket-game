@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.project-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.project-category {
+    width: calc(33% - 1rem);
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.project-category img {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 100px;
+    height: 100px;
+}

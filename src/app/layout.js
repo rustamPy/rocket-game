@@ -2,6 +2,7 @@ import React from 'react'
 import '@/assets/styles/globals.css'
 
 import NavBar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const HomeLayout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const HomeLayout = ({ children }) => {
         <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )
