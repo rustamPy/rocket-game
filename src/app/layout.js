@@ -7,9 +7,9 @@ import Footer from '@/components/Footer'
 const HomeLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col min-h-screen">
         <NavBar />
-        <main>
+        <main className="flex-grow">
           {children}
         </main>
         <Footer />

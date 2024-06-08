@@ -1,11 +1,8 @@
 import Link from 'next/link';
-import { FaGamepad } from 'react-icons/fa';
+import { gamesList } from '@/context/Games';
 export default function GamesList() {
 
-    const games = [
-        { name: 'Rocket Space', href: 'games/rocket', level: 'easy' }
-    ]
-
+    const games = gamesList();
     return (
         <>
             <div style={{ textAlign: 'center', margin: 20 }}>

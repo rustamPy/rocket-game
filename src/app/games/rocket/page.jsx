@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import { FaPlay, FaPause } from 'react-icons/fa';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './styles.css';
 
 const Game = () => {
