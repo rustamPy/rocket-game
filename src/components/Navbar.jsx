@@ -1,21 +1,17 @@
 'use client';
-import { Fragment } from 'react'
+import { useEffect, useState } from 'react'
 import { FaGamepad } from 'react-icons/fa';
 import Link from 'next/link';
 import {
     Disclosure,
     DisclosureButton,
-    DisclosurePanel,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
-    Transition,
+    DisclosurePanel
 } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+
 
 const navigation = [
-    { name: 'Games', href: '/games', current: true },
+    { name: 'Games', href: '/games', current: true }
 ]
 
 function classNames(...classes) {
@@ -23,6 +19,34 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+
+    const [currentDate, setCurrentDate] = useState(getCurrentFormattedDate())
+
+    useEffect(() => {
+        const liveDate = setInterval(() => setCurrentDate(getCurrentFormattedDate()), 1000)
+        return () => clearInterval(liveDate);
+    }, [])
+
+
+    function padToTwoDigits(num) {
+        return num.toString().padStart(2, '0');
+    }
+
+    function getCurrentFormattedDate() {
+
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = padToTwoDigits(now.getMonth() + 1); // Months are zero-indexed
+        const day = padToTwoDigits(now.getDate());
+        const hours = padToTwoDigits(now.getHours());
+        const minutes = padToTwoDigits(now.getMinutes());
+        const seconds = padToTwoDigits(now.getSeconds());
+
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    }
+
+
+
     return (
         <Disclosure as="nav" className="bg-gray-800">
             {({ open }) => (
@@ -65,6 +89,9 @@ export default function NavBar() {
                                         ))}
                                     </div>
                                 </div>
+                            </div>
+                            <div className="hidden sm:ml-6 sm:block">
+                                <span style={{ color: 'white' }} className='px-3 py-2 text-sm font-medium'>{currentDate}</span>
                             </div>
                         </div>
                     </div>
