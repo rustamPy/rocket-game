@@ -4,7 +4,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { FaGamepad } from 'react-icons/fa';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; // Import useRouter hook from Next.js
+import { usePathname } from 'next/navigation'; // Import useRouter hook from Next.js
 import { useEffect, useState } from 'react';
 
 // Define your navigation items
@@ -29,12 +29,15 @@ function getCurrentFormattedDate() {
 // Function component for NavBar
 export default function NavBar() {
     const [currentDate, setCurrentDate] = useState(getCurrentFormattedDate());
-    const [currentPage, setCurrentPage] = useState('/')
+
+
 
     const handlePage = (page) => {
         setCurrentPage(page);
     }
-    const router = useRouter('');
+    const router = usePathname();
+
+    console.log(router)
 
     useEffect(() => {
         const liveDate = setInterval(() => setCurrentDate(getCurrentFormattedDate()), 1000);
@@ -64,7 +67,7 @@ export default function NavBar() {
                                 <div className="flex flex-shrink-0 items-center">
                                     <Link href={'/'} onClick={() => handlePage('/')}>
 
-                                        <FaGamepad style={{ fontSize: 30 }} className={`${currentPage === '/' ? 'text-customColor-ORANGE' : 'text-white'}`} />
+                                        <FaGamepad style={{ fontSize: 30 }} className={`${router === '/' ? 'text-customColor-ORANGE' : 'text-white'}`} />
                                     </Link>
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
@@ -74,11 +77,11 @@ export default function NavBar() {
                                             <Link
                                                 key={item.name}
                                                 href={item.href}
-                                                className={`${currentPage === item.href
+                                                className={`${router.startsWith(item.href)
                                                     ? 'bg-customColor-ORANGE text-customColor-BLUE'
                                                     : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                                                     } rounded-md px-3 py-2 text-sm font-medium`}
-                                                aria-current={router.pathname === item.href ? 'page' : undefined}
+                                                aria-current={router === item.href ? 'page' : undefined}
                                                 onClick={() => handlePage(item.href)}>
                                                 {item.name}
                                             </Link>
