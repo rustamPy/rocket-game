@@ -12,6 +12,14 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        customColor: {
+          'ORANGE': '#dca828', // Replace with your custom hex color
+          'BLUE': '#1f2937',
+          'DEFAULT': '#2391FF', // You can define different shades here if needed
+          'dark': '#004080',
+        },
+      },
     },
   },
   plugins: [],
