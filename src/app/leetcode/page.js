@@ -14,7 +14,7 @@ export default function Leetcode() {
         premium: 'pi-bolt'
     };
 
-    const tasksPerPage = 10;
+    const tasksPerPage = 20;
 
     const [currentPage, setCurrentPage] = useState(1);
     const [paginatedQuestions, setPaginatedQuestions] = useState([]);
@@ -86,6 +86,11 @@ export default function Leetcode() {
                                         </svg>
                                     </div>
                                 </div>
+                            </div>
+
+
+                            <div className="text-center p-1.5 min-w-full inline-block align-middle">
+                                <span className="" style={{ color: "red" }}>Tasks count: <b>{filteredQuestions.length}</b></span>
                             </div>
                             {filteredQuestions.length >= 1 ? (
                                 <>
