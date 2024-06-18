@@ -36,9 +36,6 @@ export default function NavBar() {
         setCurrentPage(page);
     }
     const router = usePathname();
-
-    console.log(router)
-
     useEffect(() => {
         const liveDate = setInterval(() => setCurrentDate(getCurrentFormattedDate()), 1000);
         return () => clearInterval(liveDate);

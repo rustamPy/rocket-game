@@ -6,9 +6,9 @@
         "lock": "free",
         "url": "https://leetcode.com/problems/two-sum/description/",
         "companies": [
-            "X"
-        ],
-        "problem_solution": "dsafsa"
+            "Google",
+            "Meta"
+        ]
     },
     {
         "id": 496,
@@ -19,7 +19,6 @@
         "content": "Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. Example: Given `nums = [2, 7, 11, 15]`, `target = 9`, Because `nums[0] + nums[1] = 2 + 7 = 9`, return `[0, 1]`.",
         "companies": [
             "X"
-        ],
-        "problem_solution": "class Solution:\n    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:\\n        nums1map = {k:v for v, k in enumerate(nums1)}\\n        res = [-1] * len(nums1)\\n        stack = []\\n\\n        for i in range(len(nums2)):\\n            curr = nums2[i]\\n            while stack and curr > stack[-1]:\\n                res[nums1map[stack.pop()]] = curr\\n            if nums2[i] in nums1map:\\n                stack.append(nums2[i])\\n        return res"
+        ]
     }
 ]

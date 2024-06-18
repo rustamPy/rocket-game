@@ -22,3 +22,72 @@
     width: 100px;
     height: 100px;
 }
+.innerSolution {
+    font-size: 15px;
+
+}
+
+.innerSolution code {
+    color: red;
+}
+
+.innerSolution h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* Custom styles for syntax highlighting */
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #6272a4;
+    /* Comment color */
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+    color: #ff79c6;
+    /* Keyword color */
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-tag .hljs-attr {
+    color: #bd93f9;
+    /* Number color */
+}
+
+.hljs-string,
+.hljs-doctag {
+    color: #f1fa8c;
+    /* String color */
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+    color: #50fa7b;
+    /* Title color */
+}
+
+.hljs-subst {
+    font-weight: bold;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+    color: #8be9fd;
+    /* Type/Class color */
+}
+
+.hljs-function,
+.hljs-symbol {
+    color: #ffb86c;
+    /* Function/Symbol color */
+}
