@@ -132,7 +132,7 @@ export default function Leetcode() {
                                                             <Link href={`/leetcode/${question.id}`}>{question.title}</Link>
                                                         </td>
                                                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                                                            <span className={`inline-flex items-center rounded-md ${question.level == 'easy' ? 'bg-green-100' : question.level == 'medium' ? 'bg-gold-200' : 'gray-100'} px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10`}>
+                                                            <span className={`inline-flex items-center rounded-md ${question.level == 'easy' ? 'bg-green-100' : question.level == 'medium' ? 'bg-yellow-200' : 'gray-100'} px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10`}>
                                                                 {question.level}
                                                             </span>
                                                         </td>
